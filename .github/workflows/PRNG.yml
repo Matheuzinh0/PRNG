@@ -18,6 +18,7 @@ jobs:
 
       - name: Executar script
         run: |
+
           echo "Executando o scripts PRNG..."
           code/./PRNG2_m32_l8
 	  code/./PRNG_m64_l8
