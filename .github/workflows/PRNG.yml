@@ -1,0 +1,24 @@
+name: Executar Geradores
+
+on:
+  push:
+    branches:
+      - main 
+  pull_request:
+    branches:
+      - main 
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Verificar código
+        uses: actions/checkout@v3
+
+      - name: Executar script
+        run: |
+          echo "Executando o scripts PRNG..."
+          ./PRNG2_m32_l8
+	  ./PRNG_m64_l8
+	  ./PRNGm64_l16
