@@ -20,8 +20,8 @@ jobs:
         run: |
           echo "Compilando os programas..."
           gcc -o code/PRNG2_m32_l8 code/PRNG2_m32_l8.c || { echo "Falha ao compilar PRNG2_m32_l8.c"; exit 1; }
-          gcc -o code/PRNG_m64_l8 code/PRNG_m64_l8.c || { echo "Falha ao compilar PRNG_m64_l8.c"; exit 1; }
-          gcc -o code/PRNGm64_l16 code/PRNGm64_l16.c || { echo "Falha ao compilar PRNGm64_l16.c"; exit 1; }
+          gcc -o code/PRNG2_m64_l8 code/PRNG2_m64_l8.c || { echo "Falha ao compilar PRNG_m64_l8.c"; exit 1; }
+          gcc -o code/PRNG2_m64_l16 code/PRNG2_m64_l16.c || { echo "Falha ao compilar PRNGm64_l16.c"; exit 1; }
 
       - name: Listar arquivos compilados
         run: |
@@ -31,12 +31,12 @@ jobs:
       - name: Definir permissões de execução
         run: |
           chmod +x code/PRNG2_m32_l8
-          chmod +x code/PRNG_m64_l8
-          chmod +x code/PRNGm64_l16
+          chmod +x code/PRNG2_m64_l8
+          chmod +x code/PRNG2_m64_l16
 
       - name: Executar os programas
         run: |
           echo "Executando os scripts PRNG..."
           ./code/PRNG2_m32_l8
-          ./code/PRNG_m64_l8
-          ./code/PRNGm64_l16
+          ./code/PRNG2_m64_l8
+          ./code/PRNG2_m64_l16
