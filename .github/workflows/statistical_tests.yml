@@ -20,7 +20,7 @@ jobs:
         run: |
          ./statistical_tests/SP800-22/assess 10000
          0
-         output.bin
+         "output.bin"
          1
          0
          10
