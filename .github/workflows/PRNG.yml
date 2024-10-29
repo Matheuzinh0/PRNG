@@ -15,14 +15,6 @@ jobs:
     steps:
       - name: Verificar código
         uses: actions/checkout@v3
-
-      - name: Compilar os programas
-        run: |
-          echo "Compilando os programas..."
-          gcc -o code/PRNG2_m32_l8 code/PRNG2_m32_l8.c
-          gcc -o code/PRNG_m64_l8 code/PRNG_m64_l8.c
-          gcc -o code/PRNGm64_l16 code/PRNGm64_l16.c
-
       - name: Executar os programas
         run: |
           echo "Executando os scripts PRNG..."
