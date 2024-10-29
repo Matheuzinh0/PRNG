@@ -16,23 +16,19 @@ jobs:
       - name: Verificar código
         uses: actions/checkout@v3
         
-      - name: Criar arquivo de entrada
-        run: |
-          echo -e "0\noutput.bin\n1\n0\n100\n1" > input.txt
-
       - name: Executar "SP800-22" com atraso nas entradas
         run: |
           #!/bin/bash
           {
             echo "0"
-            sleep 0.3
+            sleep 0.5  # Aumentando o tempo de espera
             echo "output.bin"
-            sleep 0.3
+            sleep 0.5
             echo "1"
-            sleep 0.3
+            sleep 0.5
             echo "0"
-            sleep 0.3
+            sleep 0.5
             echo "100"
-            sleep 0.3
+            sleep 0.5
             echo "1"
           } | ./statistical_tests/SP800-22/assess 10000
