@@ -14,14 +14,7 @@ jobs:
 
     steps:
       - name: Verificar código
-        uses: actions/checkout@v3
-        
-      - name: Criar arquivo de saída
-        run: |
-          # Aqui você deve incluir o comando que gera o output.bin.
-          # Por exemplo, substitua pelo comando correto:
-          echo -e "10000000000000000" > output.bin  # Exemplo de conteúdo, ajuste conforme necessário
-
+        uses: actions/checkout@v4
       - name: Executar "SP800-22"
         run: |
           ./statistical_tests/SP800-22/assess 10000 <<EOF
