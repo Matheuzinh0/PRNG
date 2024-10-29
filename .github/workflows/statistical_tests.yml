@@ -16,19 +16,19 @@ jobs:
       - name: Verificar código
         uses: actions/checkout@v3
         
-      - name: Executar "SP800-22" com atraso nas entradas
+      - name: Criar arquivo de saída
         run: |
-          #!/bin/bash
-          {
-            echo "0"
-            sleep 0.5  # Aumentando o tempo de espera
-            echo "output.bin"
-            sleep 0.5
-            echo "1"
-            sleep 0.5
-            echo "0"
-            sleep 0.5
-            echo "100"
-            sleep 0.5
-            echo "1"
-          } | ./statistical_tests/SP800-22/assess 10000
+          # Aqui você deve incluir o comando que gera o output.bin.
+          # Por exemplo, substitua pelo comando correto:
+          echo -e "10000000000000000" > output.bin  # Exemplo de conteúdo, ajuste conforme necessário
+
+      - name: Executar "SP800-22"
+        run: |
+          ./statistical_tests/SP800-22/assess 10000 <<EOF
+0
+output.bin
+1
+0
+100
+1
+EOF
