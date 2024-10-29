@@ -1,4 +1,4 @@
-name: Executar Geradores
+name: Executar testes
 
 on:
   push:
@@ -17,12 +17,5 @@ jobs:
         uses: actions/checkout@v3
         
       - name: Executar "SP800-22"
-      run: |
-          ./statistical_tests/SP800-22/assess 10000 <<EOF
-0
-output.bin
-1
-0
-100
-1
-EOF
+        run: |
+          echo -e "0\noutput.bin\n1\n0\n100\n1" | ./statistical_tests/SP800-22/assess 10000
