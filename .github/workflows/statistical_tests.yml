@@ -16,26 +16,12 @@ jobs:
       - name: Verificar código
         uses: actions/checkout@v3
         
-      - name: Configurar Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.x'  # Defina a versão do Python desejada
-
-      - name: Criar arquivo de saída
-        run: |
-          python -c "
-import os
-with open('output.bin', 'wb') as f:
-    f.write(os.urandom(100))  # Gera 100 bytes aleatórios, ajuste conforme necessário
-"
-
       - name: Executar "SP800-22"
         run: |
           ./statistical_tests/SP800-22/assess 10000 <<EOF
-0
-output.bin
-1
-0
-100
-1
-EOF
+          1
+          1
+          0
+          100
+          1
+          EOF
