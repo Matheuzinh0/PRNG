@@ -18,9 +18,14 @@ jobs:
         
       - name: Executar "SP800-22"
         run: |
-          ./statistical_tests/SP800-22/assess 10000
-          echo 0
-          echo output.bin
-          echo 0
-          echo 10
-          echo 1
+          ./statistical_tests/SP800-22/assess 10000 << EOF
+          0
+          output.bin
+          1
+          0
+          100
+          1
+          EOF
+
+
+       
