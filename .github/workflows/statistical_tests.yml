@@ -20,7 +20,7 @@ jobs:
         run: |
           ./statistical_tests/SP800-22/assess 10000 << EOF
           0
-          "/statistical_tests/SP800-22/output.bin"
+         echo "/statistical_tests/SP800-22/output.bin"
           1
           0
           100
