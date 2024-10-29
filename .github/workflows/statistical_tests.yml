@@ -20,6 +20,7 @@ jobs:
         run: |
           
           sudo apt install libtestu01-0-dev
+          chmod +x /TESTU01/teste
            ./TESTU01/teste
            #./statistical_tests/SP800-22/assess 10000 <<EOF
            # 0
