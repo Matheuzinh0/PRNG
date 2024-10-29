@@ -16,6 +16,12 @@ jobs:
       - name: Verificar código
         uses: actions/checkout@v3
 
+      - name: Definir permissões de execução
+        run: |
+          chmod +x code/PRNG2_m32_l8
+          chmod +x code/PRNG_m64_l8
+          chmod +x code/PRNGm64_l16
+
       - name: Listar arquivos compilados
         run: |
           echo "Arquivos na pasta code:"
