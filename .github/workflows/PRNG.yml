@@ -16,13 +16,6 @@ jobs:
       - name: Verificar código
         uses: actions/checkout@v3
 
-      - name: Compilar os programas
-        run: |
-          echo "Compilando os programas..."
-          gcc -o main/PRNG2_m32_l8 code/PRNG2_m32_l8.c || { echo "Falha ao compilar PRNG2_m32_l8.c"; exit 1; }
-          gcc -o main/PRNG_m64_l8 code/PRNG_m64_l8.c || { echo "Falha ao compilar PRNG_m64_l8.c"; exit 1; }
-          gcc -o main/PRNGm64_l16 code/PRNGm64_l16.c || { echo "Falha ao compilar PRNGm64_l16.c"; exit 1; }
-
       - name: Listar arquivos compilados
         run: |
           echo "Arquivos na pasta code:"
