@@ -19,6 +19,8 @@ jobs:
       - name: Compilar os programas
         run: |
           echo "Compilando os programas..."
+          gcc -o code/PRNG2_m32_l4 code/PRNG1_m32.c
+          gcc -o code/PRNG2_m32_l4 code/PRNG1_m64.c 
           gcc -o code/PRNG2_m32_l4 code/PRNG2_m32_l4.c 
           gcc -o code/PRNG2_m32_l8 code/PRNG2_m32_l8.c 
           gcc -o code/PRNG2_m64_l8 code/PRNG2_m64_l8.c 
@@ -31,6 +33,8 @@ jobs:
 
       - name: Definir permissões de execução
         run: |
+          chmod +x code/PRNG1_m32
+          chmod +x code/PRNG1_m64
           chmod +x code/PRNG2_m32_l4
           chmod +x code/PRNG2_m32_l8
           chmod +x code/PRNG2_m64_l8
@@ -39,6 +43,12 @@ jobs:
       - name: Executar os programas
         run: |
           echo "Executando os scripts PRNG..."
+          echo "        PRNG1        "
+          echo "m=32"
+          ./code/PRNG1_m32
+          echo "m=64"
+          ./code/PRNG1_m64
+          echo "        PRNG2        "
           echo "m=32 l=4"
           ./code/PRNG2_m32_l4
           echo "m=32 l=8"
