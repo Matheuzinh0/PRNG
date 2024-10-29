@@ -18,6 +18,7 @@ jobs:
         
       - name: Executar "SP800-22"
         run: |
+          
           sudo apt install libtestu01-0-dev
            ./TESTU01/teste
            #./statistical_tests/SP800-22/assess 10000 <<EOF
