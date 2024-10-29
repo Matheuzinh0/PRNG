@@ -19,9 +19,9 @@ jobs:
       - name: Compilar os programas
         run: |
           echo "Compilando os programas..."
-          gcc -o code/PRNG2_m32_l8 code/PRNG2_m32_l8.c || { echo "Falha ao compilar PRNG2_m32_l8.c"; exit 1; }
-          gcc -o code/PRNG2_m64_l8 code/PRNG2_m64_l8.c || { echo "Falha ao compilar PRNG_m64_l8.c"; exit 1; }
-          gcc -o code/PRNG2_m64_l16 code/PRNG2_m64_l16.c || { echo "Falha ao compilar PRNGm64_l16.c"; exit 1; }
+          gcc -o code/PRNG2_m32_l8 code/PRNG2_m32_l8.c 
+          gcc -o code/PRNG2_m64_l8 code/PRNG2_m64_l8.c 
+          gcc -o code/PRNG2_m64_l16 code/PRNG2_m64_l16.c 
 
       - name: Listar arquivos compilados
         run: |
@@ -37,6 +37,9 @@ jobs:
       - name: Executar os programas
         run: |
           echo "Executando os scripts PRNG..."
+          echo "m=32 l=8"
           ./code/PRNG2_m32_l8
+          echo "m=64 l=8"
           ./code/PRNG2_m64_l8
+          echo "m=64 l =16"
           ./code/PRNG2_m64_l16
