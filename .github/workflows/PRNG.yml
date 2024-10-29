@@ -18,9 +18,9 @@ jobs:
       - name: Executar os programas
         run: |
           echo "Executando os scripts PRNG..."
-          chmod777 " ./code/PRNG2_m32_l8"
-          chmod777 " ./code/PRNG2_m64_l8"
-          chmod777 " ./code/PRNG2_m64_l16"
+          chmod 777 " ./code/PRNG2_m32_l8"
+          chmod 777 " ./code/PRNG2_m64_l8"
+          chmod 777 " ./code/PRNG2_m64_l16"
           ./code/PRNG2_m32_l8
           ./code/PRNG_m64_l8
           ./code/PRNGm64_l16
