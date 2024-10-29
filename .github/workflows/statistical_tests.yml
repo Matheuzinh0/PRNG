@@ -18,10 +18,11 @@ jobs:
         
       - name: Executar "SP800-22"
         run: |
-         ./statistical_tests/SP800-22/assess 10000
+         ./statistical_tests/SP800-22/assess 10000 << EOF
          0
          "output.bin"
          1
          0
          10
          1
+         EOF
