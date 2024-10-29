@@ -1,0 +1,27 @@
+name: Executar Geradores
+
+on:
+  push:
+    branches:
+      - main 
+  pull_request:
+    branches:
+      - main 
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Verificar código
+        uses: actions/checkout@v3
+        
+      - name: Executar "SP800-22"
+        run: |
+         ./statistical_tests/SP800-22/assess 10000
+         0
+         output.bin
+         1
+         0
+         10
+         1
