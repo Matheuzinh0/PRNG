@@ -1,4 +1,4 @@
-name: Executar testes
+name: Executar Geradores
 
 on:
   push:
@@ -11,6 +11,7 @@ on:
 jobs:
   run:
     runs-on: ubuntu-latest
+    timeout-minutes: 0.3  # Define um tempo limite de 10 minutos para o job
 
     steps:
       - name: Verificar código
