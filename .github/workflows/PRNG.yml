@@ -15,12 +15,15 @@ jobs:
     steps:
       - name: Verificar código
         uses: actions/checkout@v3
+
+      - name: Listar arquivos compilados
+        run: |
+          echo "Arquivos na pasta code:"
+          ls -l code/
+
       - name: Executar os programas
         run: |
           echo "Executando os scripts PRNG..."
-          chmod 777 " ./code/PRNG2_m32_l8"
-          chmod 777 " ./code/PRNG2_m64_l8"
-          chmod 777 " ./code/PRNG2_m64_l16"
           ./code/PRNG2_m32_l8
           ./code/PRNG_m64_l8
           ./code/PRNGm64_l16
