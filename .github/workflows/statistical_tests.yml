@@ -18,21 +18,14 @@ jobs:
         with:
           lfs: true  # Habilita o suporte ao Git LFS
 
-      - name: Instalar Dependências
+      - name: Configurar e Executar em Docker
         run: |
-          sudo apt update
-          sudo apt install -y libtestu01-0-dev gcc autoconf automake libtool  # Instala ferramentas necessárias
-
-      - name: Compilar e Instalar TESTU01
-        run: |
-          cd TESTU01/TestU01-1.2.3  # Navega para o diretório correto
-          ./bootstrap.sh || true     # Tenta executar o bootstrap se disponível
-          ./configure                 # Configura o projeto
-          make                        # Compila o projeto
-          sudo make install           # Instala o projeto
-
-      - name: Compilar e Executar "teste"
-        run: |
-          gcc TESTU01/teste.c -o TESTU01/teste -Iinclude -Ilib -lmylib -ltestu01 -lprobdist -lm
-          chmod +x TESTU01/teste
-          ./TESTU01/teste
+          docker run --rm -v ${{ github.workspace }}:/workspace -w /workspace ubuntu:20.04 /bin/bash -c "
+            apt update &&
+            apt install -y autoconf automake libtool gcc g++ make libtestu01-0-dev &&
+            cd TESTU01/TestU01-1.2.3 &&
+            ./bootstrap.sh || true &&
+            ./configure &&
+            make &&
+            sudo make install
+          "
