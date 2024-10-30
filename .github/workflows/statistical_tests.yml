@@ -20,7 +20,7 @@ jobs:
 
       - name: Executar "TESTU01"
         run: |
-          sudo apt install -y libtestu01-0-dev
-	  gcc TESTU01/teste.c -o TESTU01/teste -Iinclude - Ilib -lmylib -ltestu01 -lprobdist -lm
-          chmod +x TESTU01/teste
-          ./TESTU01/teste
+             sudo apt install -y libtestu01-0-dev
+	     gcc TESTU01/teste.c -o TESTU01/teste -Iinclude - Ilib -lmylib -ltestu01 -lprobdist -lm
+             chmod +x TESTU01/teste
+             ./TESTU01/teste
