@@ -26,9 +26,9 @@ jobs:
       - name: Compilar e Executar "TESTU01"
         run: |
           gcc TESTU01/teste.c -o TESTU01/teste -Iinclude -Ilib -lmylib -ltestu01 -lprobdist -lm
-          #chmod +x TESTU01/TestU01-1.2.3/
-          #./configure
-          #make TESTU01/TestU01-1.2.3/
-          #sudo make install TESTU01/TestU01-1.2.3/
+          chmod +x TESTU01/TestU01-1.2.3/
+          ./configure
+          make TESTU01/TestU01-1.2.3/
+          sudo make install TESTU01/TestU01-1.2.3/
           chmod +x TESTU01/teste
           ./TESTU01/teste
