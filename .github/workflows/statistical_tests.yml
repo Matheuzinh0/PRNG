@@ -18,10 +18,13 @@ jobs:
         with:
           lfs: true  # Habilita o suporte ao Git LFS
 
-      - name: Executar "TESTU01"
+      - name: Instalar Dependências
         run: |
-             sudo apt install -y libtestu01-0-dev
-	     sudo apt install gcc
-	     gcc TESTU01/teste.c -o TESTU01/teste -Iinclude - Ilib -lmylib -ltestu01 -lprobdist -lm
-             chmod +x TESTU01/teste
-             ./TESTU01/teste
+          sudo apt update
+          sudo apt install -y libtestu01-0-dev gcc  # Instala o GCC se necessário
+
+      - name: Compilar e Executar "TESTU01"
+        run: |
+          gcc TESTU01/teste.c -o TESTU01/teste -I include -I lib -lmylib -ltestu01 -lprobdist -lm
+          chmod +x TESTU01/teste
+          ./TESTU01/teste
