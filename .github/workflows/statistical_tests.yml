@@ -18,14 +18,8 @@ jobs:
         with:
           lfs: true  # Habilita o suporte ao Git LFS
 
-      - name: Configurar e Executar em Docker
+      - name: Executar "TESTU01"
         run: |
-          docker run --rm -v ${{ github.workspace }}:/workspace -w /workspace ubuntu:20.04 /bin/bash -c "
-            apt update &&
-            apt install -y autoconf automake libtool gcc g++ make libtestu01-0-dev &&
-            cd TESTU01/TestU01-1.2.3 &&
-            ./bootstrap.sh || true &&
-            ./configure &&
-            make &&
-            sudo make install
-          "
+          sudo apt install -y libtestu01-0-dev
+          chmod +x TESTU01/teste
+          ./TESTU01/teste
