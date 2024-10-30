@@ -10,7 +10,7 @@ static int s = 32;
 
 int main(){
 unif01_Gen * gen;
-gen= ufile_CreateReadBin ("TESTU01/output.bin",32);
+gen= ufile_CreateReadBin ("TESTU01/PRNG2_m32_l4.bin",32);
 void ufile_InitReadBin ();
 bbattery_Rabbit(gen,nb);
 bbattery_Alphabit(gen,nb,r,s);
