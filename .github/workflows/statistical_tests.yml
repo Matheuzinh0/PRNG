@@ -21,7 +21,7 @@ jobs:
       - name: Instalar Dependências
         run: |
           sudo apt update
-          sudo apt install -y libtestu01-0-dev gcc autoconf make  # Instala o GCC e ferramentas necessárias
+          sudo apt install -y libtestu01-0-dev gcc autoconf automake libtool  # Instala ferramentas necessárias
 
       - name: Compilar e Instalar TESTU01
         run: |
