@@ -28,7 +28,7 @@ jobs:
           cd TESTU01/TestU01-1.2.3  # Navega para o diretório correto
           ./configure                 # Configura o projeto
           make                        # Compila o projeto
-          sudo make install           # Instala o projeto
+          #sudo make install           # Instala o projeto
 
       - name: Compilar e Executar "teste"
         run: |
