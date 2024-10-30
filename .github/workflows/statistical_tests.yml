@@ -16,12 +16,12 @@ jobs:
       - name: Verificar código
         uses: actions/checkout@v3
         with:
-          lfs: true  # Habilita o suporte ao Git LFS
+          lfs: true  
 
       - name: Executar "TESTU01"
         run: |
           sudo apt install -y libtestu01-0-dev
-          gcc -o TESTU01/teste TESTU01/teste.c -Iinclude -Ilib -lmylib -lprobdist -ltestu01 -lm
-          ls -l TESTU01/
+          #gcc -o TESTU01/teste TESTU01/teste.c -Iinclude -Ilib -lmylib -lprobdist -ltestu01 -lm
+          #ls -l TESTU01/
           chmod +x TESTU01/teste
           ./TESTU01/teste
