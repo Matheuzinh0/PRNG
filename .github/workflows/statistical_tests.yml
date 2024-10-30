@@ -21,14 +21,17 @@ jobs:
       - name: Instalar Dependências
         run: |
           sudo apt update
-          sudo apt install -y libtestu01-0-dev gcc  # Instala o GCC se necessário
+          sudo apt install -y libtestu01-0-dev gcc autoconf make  # Instala o GCC e ferramentas necessárias
 
-      - name: Compilar e Executar "TESTU01"
+      - name: Compilar e Instalar TESTU01
+        run: |
+          cd TESTU01/TestU01-1.2.3  # Navega para o diretório correto
+          ./configure                 # Configura o projeto
+          make                        # Compila o projeto
+          sudo make install           # Instala o projeto
+
+      - name: Compilar e Executar "teste"
         run: |
           gcc TESTU01/teste.c -o TESTU01/teste -Iinclude -Ilib -lmylib -ltestu01 -lprobdist -lm
-          chmod +x TESTU01/TestU01-1.2.3/
-          ./configure
-          make TESTU01/TestU01-1.2.3/
-          sudo make install TESTU01/TestU01-1.2.3/
           chmod +x TESTU01/teste
           ./TESTU01/teste
