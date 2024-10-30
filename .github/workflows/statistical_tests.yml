@@ -16,7 +16,7 @@ jobs:
       - name: Verificar código
         uses: actions/checkout@v3
         
-      - name: Executar "SP800-22"
+      - name: Executar "TESTU01"
         run: |
           
           sudo apt install libtestu01-0-dev
