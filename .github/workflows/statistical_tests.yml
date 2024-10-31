@@ -15,8 +15,8 @@ jobs:
     steps:
       - name: Verificar código
         uses: actions/checkout@v3
-        with:
-          lfs: true  
+        #with:
+         # lfs: true  
 
       - name: Executar "TESTU01"
         run: |
